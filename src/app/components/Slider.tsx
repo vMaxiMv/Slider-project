@@ -19,13 +19,14 @@ const slides = [
 export default function Slider() {
   return (
     <div className="w-full px-4 md:px-0 relative">
-    <div className="sm:hidden swiper-pagination  !absolute !top-0 !left-0 my-3 flex items-start justify-start"></div>
+   
       <Swiper
         modules={[Pagination, Autoplay]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         spaceBetween={20}
         slidesPerView={1}
+         touchEventsTarget="container"
         pagination={{ el: '.swiper-pagination', clickable: true }}
         breakpoints={{
           640: { slidesPerView: 2, spaceBetween: 10 },
@@ -45,6 +46,7 @@ export default function Slider() {
             </div>
           </SwiperSlide>
         ))}
+         <div className="sm:hidden swiper-pagination  !absolute !top-0 !left-0 my-3 flex items-start justify-start"></div>
       </Swiper>
 
       <style jsx global>{`
